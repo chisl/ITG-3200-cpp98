@@ -32,7 +32,7 @@ public:
 	
 	/*
 	 * REG WhoAmI:
-	 * verify the identity of the device. 
+	 * verify the identity of the device.
 	 */
 	struct WhoAmI
 	{
@@ -79,11 +79,11 @@ public:
 	/*
 	 * REG SampleRateDivider:
 	 * This register determines the sample rate of the ITG-3200 gyros. The gyros outputs are sampled internally at
-	 *       either 1kHz or 8kHz, determined by the DLPF_CFG setting (see register 22). This sampling is then filtered
-	 *       digitally and delivered into the sensor registers after the number of cycles determined by this register.
-	 *       The sample rate is given by the following formula:
-	 *       Fsample = Finternal / (divider+1),
-	 *       where Finternal is either 1kHz or 8kHz 
+	 * either 1kHz or 8kHz, determined by the DLPF_CFG setting (see register 22). This sampling is then filtered
+	 * digitally and delivered into the sensor registers after the number of cycles determined by this register.
+	 * The sample rate is given by the following formula:
+	 * Fsample = Finternal / (divider+1),
+	 * where Finternal is either 1kHz or 8kHz
 	 */
 	struct SampleRateDivider
 	{
@@ -131,7 +131,7 @@ public:
 		/* Bits FS_SEL: */
 		/*
 		 * Set the full-scale range of the gyro sensors. The power-on-reset value of FS_SEL is 00h.
-		 *           Set to 03h for proper operation. 
+		 * Set to 03h for proper operation.
 		 */
 		struct FS_SEL
 		{
@@ -176,7 +176,7 @@ public:
 	/*
 	 * REG InterruptConfiguration:
 	 * This register configures the interrupt operation of the device. The interrupt output pin (INT) configuration can be set, the interrupt latching/clearing method can be set, and the triggers for the interrupt can be set.<br>
-	 *       Note that if the application requires reading every sample of data from the ITG-3200 part, it is best to enable the raw data ready interrupt (RAW_RDY_EN). This allows the application to know when new sample data is available. 
+	 * Note that if the application requires reading every sample of data from the ITG-3200 part, it is best to enable the raw data ready interrupt (RAW_RDY_EN). This allows the application to know when new sample data is available.
 	 */
 	struct InterruptConfiguration
 	{
@@ -266,7 +266,7 @@ public:
 	
 	/*
 	 * REG InterruptStatus:
-	 * Whenever one of the interrupt sources is triggered, the corresponding bit will be set. The polarity of the interrupt pin (active high/low) and the latch type (pulse or latch) has no affect on these status bits. 
+	 * Whenever one of the interrupt sources is triggered, the corresponding bit will be set. The polarity of the interrupt pin (active high/low) and the latch type (pulse or latch) has no affect on these status bits.
 	 */
 	struct InterruptStatus
 	{
@@ -322,7 +322,7 @@ public:
 	/*
 	 * REG TEMP_OUT:
 	 * 16-bit temperature data (2's complement format)
-	 *       At any time, these values can be read from the device; however it is best to use the interrupt function to determine when new data is available 
+	 * At any time, these values can be read from the device; however it is best to use the interrupt function to determine when new data is available
 	 */
 	struct TEMP_OUT
 	{
@@ -358,7 +358,7 @@ public:
 	/*
 	 * REG GYRO_XOUT:
 	 * 16-bit X gyro output data (2's complement format)
-	 *       At any time, these values can be read from the device; however it is best to use the interrupt function to determine when new data is available 
+	 * At any time, these values can be read from the device; however it is best to use the interrupt function to determine when new data is available
 	 */
 	struct GYRO_XOUT
 	{
@@ -394,7 +394,7 @@ public:
 	/*
 	 * REG GYRO_YOUT:
 	 * 16-bit Y gyro output data (2's complement format)
-	 *       At any time, these values can be read from the device; however it is best to use the interrupt function to determine when new data is available 
+	 * At any time, these values can be read from the device; however it is best to use the interrupt function to determine when new data is available
 	 */
 	struct GYRO_YOUT
 	{
@@ -430,7 +430,7 @@ public:
 	/*
 	 * REG GYRO_ZOUT:
 	 * 16-bit Y gyro output data (2's complement format)
-	 *       At any time, these values can be read from the device; however it is best to use the interrupt function to determine when new data is available 
+	 * At any time, these values can be read from the device; however it is best to use the interrupt function to determine when new data is available
 	 */
 	struct GYRO_ZOUT
 	{
@@ -465,7 +465,7 @@ public:
 	
 	/*
 	 * REG PowerManagement:
-	 * Setting the SLEEP bit in the register puts the device into very low power sleep mode. In this mode, only the serial interface and internal registers remain active, allowing for a very low standby current. Clearing this bit puts the device back into normal mode. To save power, the individual standby selections for each of the gyros should be used if any gyro axis is not used by the application. 
+	 * Setting the SLEEP bit in the register puts the device into very low power sleep mode. In this mode, only the serial interface and internal registers remain active, allowing for a very low standby current. Clearing this bit puts the device back into normal mode. To save power, the individual standby selections for each of the gyros should be used if any gyro axis is not used by the application.
 	 */
 	struct PowerManagement
 	{
@@ -506,10 +506,10 @@ public:
 		/* Bits SLEEP: */
 		/*
 		 * Puts the device into very low power sleep mode. In this mode, only the serial interface
-		 *           and internal registers remain active, allowing for a very low standby current.
-		 *           Clearing this bit puts the device back into normal mode. To save power, the individual
-		 *           standby selections for each of the gyros should be used if any gyro axis is not used
-		 *           by the application. 
+		 * and internal registers remain active, allowing for a very low standby current.
+		 * Clearing this bit puts the device back into normal mode. To save power, the individual
+		 * standby selections for each of the gyros should be used if any gyro axis is not used
+		 * by the application.
 		 */
 		struct SLEEP
 		{
